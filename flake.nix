@@ -27,11 +27,10 @@
         formatter = pkgs.nixpkgs-fmt;
         homeManagerModule = {
           # Generate files in home folder
-          home.nvim = {
-            target = ".confg";
+          home.file.".config/nvim" = {
             enable = true;
             recursive = true;
-            source = "${self}/.";
+            source = "${self}";
           };
 
           home.sessionVariables = {
