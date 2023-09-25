@@ -60,7 +60,7 @@
               telescope-nvim
 
               # treesitter
-              nvim-treesitter
+              nvim-treesitter.withAllGrammars
 
               # lsp
               nvim-lspconfig
