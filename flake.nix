@@ -79,9 +79,21 @@
               fd
 
               # Language servers
-              nil
-              rust-analyzer
-              nodePackages.yaml-language-server
+              ccls # c, c++
+              java-language-server # java
+              lua-language-server # lua
+              marksman # markdown
+              metals # scala
+              nil # nix
+              nodePackages.bash-language-server # bash
+              nodePackages.grammarly-languageserver # english 
+              nodePackages.typescript-language-server # typescript, javascript
+              nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
+              nodePackages.yaml-language-server # yaml
+              python311Packages.python-lsp-server # python
+              rust-analyzer # rust
+              texlab # tex
+              typst-lsp # typst
             ];
           };
         };
