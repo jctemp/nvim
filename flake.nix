@@ -11,7 +11,7 @@
   };
 
 
-  outputs = { self, nixpkgs, home-manager, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (system:
       let
         pkgs = import nixpkgs { inherit system; };
@@ -50,6 +50,9 @@
 
               # colour theme
               rose-pine
+
+              # status line
+              lualine-nvim
 
               # telescope
               popup-nvim
