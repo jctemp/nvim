@@ -5,6 +5,8 @@
 ---
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
+local lsp_format = require("lsp-format")
+lsp_format.setup{}
 
 -- Merge the defaults lspconfig provides with the capabilities nvim-cmp adds
 lsp_defaults.capabilities = vim.tbl_deep_extend(
@@ -42,7 +44,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- (lspconfig.<name>.setup{})
 ---
 
-
+lspconfig.nil_ls.setup{ on_attach = lsp_format.on_attach }
+lspconfig.rust_analyzer.setup{ on_attach = lsp_format.on_attach }
+lspconfig.yamlls.setup{ on_attach = lsp_format.on_attach }
 
 ---
 -- CMP and Snippets
