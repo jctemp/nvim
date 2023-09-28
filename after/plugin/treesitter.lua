@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   -- The configuration is managed by the Nix package manager. Therefore, we
   -- do not need to set `ensure_installed` or `auto_install` as the parsers
   -- are already installed through Nix.
@@ -6,6 +6,9 @@ require'nvim-treesitter.configs'.setup {
   -- ensure_installed = { "lua", "vim", "vimdoc", "query", "c" },
   -- sync_install = false,
   -- auto_install = true,
+  indent = {
+    enable = true,
+  },
   highlight = {
     enable = true,
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

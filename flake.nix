@@ -96,7 +96,6 @@
               python311Packages.python-lsp-server # python
               rust-analyzer # rust
               texlab # tex
-              typst-lsp # typst
             ];
           };
         };
