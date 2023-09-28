@@ -10,7 +10,6 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (system:
       let
@@ -36,6 +35,30 @@
           home.sessionVariables = {
             NEOVIM_PLUGIN_MGMT = "nix";
           };
+
+
+          home.packages = with pkgs; [
+              # Telescope dependencies 
+              ripgrep
+              fd
+
+              # Language servers
+              ccls # c, c++
+              java-language-server # java
+              lua-language-server # lua
+              marksman # markdown
+              metals # scala
+              nil # nix
+              nodePackages.bash-language-server # bash
+              nodePackages.grammarly-languageserver # english 
+              nodePackages.typescript-language-server # typescript, javascript
+              nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
+              nodePackages.yaml-language-server # yaml
+              python311Packages.python-lsp-server # python
+              rust-analyzer # rust
+              texlab # tex
+              typst-lsp # typst
+            ];
 
           # Configuration neovim
           programs.neovim = {
@@ -74,28 +97,6 @@
               cmp-nvim-lsp
               luasnip
               friendly-snippets
-            ];
-
-            extraPackages = with pkgs; [
-              # Telescope dependencies 
-              ripgrep
-              fd
-
-              # Language servers
-              ccls # c, c++
-              java-language-server # java
-              lua-language-server # lua
-              marksman # markdown
-              metals # scala
-              nil # nix
-              nodePackages.bash-language-server # bash
-              nodePackages.grammarly-languageserver # english 
-              nodePackages.typescript-language-server # typescript, javascript
-              nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
-              nodePackages.yaml-language-server # yaml
-              python311Packages.python-lsp-server # python
-              rust-analyzer # rust
-              texlab # tex
             ];
           };
         };
