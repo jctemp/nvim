@@ -58,14 +58,15 @@
               rust-analyzer # rust
               texlab # tex
               typst-lsp # typst
+              java-language-server # java
             ];
 
           # Configuration neovim
           programs.neovim = {
             enable = true;
-            withNodeJs = true;
-            withPython3 = true;
-            withRuby = true;
+            withNodeJs = false;
+            withPython3 = false;
+            withRuby = false;
 
             plugins = with pkgs.vimPlugins; [
               # auto-detect tabstop and shiftwidth

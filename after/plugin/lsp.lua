@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 lspconfig.bashls.setup { on_attach = lsp_format.on_attach }
-lspconfig.ccls.setup { on_attach = lsp_format.on_attach }
+lspconfig.clangd.setup { on_attach = lsp_format.on_attach }
 lspconfig.cssls.setup { on_attach = lsp_format.on_attach }
 lspconfig.grammarly.setup { on_attach = lsp_format.on_attach }
 lspconfig.html.setup { on_attach = lsp_format.on_attach }
@@ -53,11 +53,11 @@ lspconfig.lua_ls.setup { on_attach = lsp_format.on_attach }
 lspconfig.marksman.setup { on_attach = lsp_format.on_attach }
 lspconfig.metals.setup { on_attach = lsp_format.on_attach }
 lspconfig.nil_ls.setup { on_attach = lsp_format.on_attach }
-lspconfig.nil_ls.setup { on_attach = lsp_format.on_attach }
 lspconfig.rust_analyzer.setup { on_attach = lsp_format.on_attach }
 lspconfig.texlab.setup { on_attach = lsp_format.on_attach }
 lspconfig.tsserver.setup { on_attach = lsp_format.on_attach }
 lspconfig.yamlls.setup { on_attach = lsp_format.on_attach }
+lspconfig.java_language_server.setup { on_attach = lsp_format.on_attach }
 
 ---
 -- CMP and Snippets
